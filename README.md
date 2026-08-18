@@ -1,16 +1,56 @@
-## Hi there 👋
+# Hi, I'm Ezekiel Oyedele 👋
 
-<!--
-**EzekielOyedele/EzekielOyedele** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Aspiring Data Analyst | Excel | SQL | Power BI
 
-Here are some ideas to get you started:
+I'm building my skills in data analytics by working with real-world datasets, exploring patterns, creating visualizations, and turning data into meaningful business insights.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## About Me
+
+- 📊 Currently building my skills in **Data Analytics**
+- 📈 Interested in **data visualization, business intelligence, and data-driven decision-making**
+- 🧮 Working with **Microsoft Excel** for data cleaning, analysis, and dashboard development
+- 🗄️ Currently developing my skills in **SQL**
+- 📊 Learning and developing practical skills with **Power BI**
+- 🚀 Building projects to strengthen my analytical and problem-solving skills
+
+## Featured Project
+
+### 🛒 Retail Sales Analysis Dashboard
+
+An end-to-end retail sales analysis project using Microsoft Excel to clean, analyze, and visualize **3,000 retail transactions**.
+
+**What I worked on:**
+- Data cleaning and preparation
+- PivotTable and PivotChart analysis
+- KPI development
+- Interactive dashboard design
+- Sales and product performance analysis
+- Regional and payment-method analysis
+- Business insight generation
+
+🔗 **[View Project →](https://github.com/EzekielOyedele/Retail-Sales-Analysis)**
+
+## Skills & Tools
+
+**Data Analytics**
+- Microsoft Excel
+- SQL
+- Power BI
+- Data Cleaning
+- Data Visualization
+- Exploratory Data Analysis
+
+**Currently Learning**
+- Advanced SQL
+- Power BI
+- Data Analytics best practices
+
+## Current Focus
+
+I'm focused on building a strong foundation in data analytics through consistent learning and practical projects.
+
+My goal is to develop the ability to move from **raw data → analysis → visualization → actionable business insights**.
+
+---
+
+### 📌 More projects coming as I continue learning and building.
