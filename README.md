@@ -29,7 +29,7 @@ An end-to-end retail sales analysis project using Microsoft Excel to clean, anal
 - Business insight generation
 
 Retaila Sales Dashboard 
-Retail Sales Dashboard Preview.png
+![Retail Sales Dashboard](https://raw.githubusercontent.com/EzekielOyedele/ezekieloyedele.github.io/ccbdfa373a5ad15c0cd4011178f60dacf238d988/Retail%20Sales%20Dashboard%20Preview.png)
 
 🔗 **[View Project →](https://github.com/EzekielOyedele/Retail-Sales-Analysis)**
 
