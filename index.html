@@ -1,79 +1,1388 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ezekiel Oyedele — Data Analyst</title>
+
+<meta name="description" content="Portfolio of Ezekiel Oyedele, a Data Analyst working with Excel, SQL and Power BI.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --paper:#F7F5F0;
-    --ink:#181F2A;
-    --ink-soft:#4A5262;
-    --teal:#2F7A73;
-    --amber:#D98E3B;
-    --grid:#DAD5C8;
-    --card:#FFFFFF;
-    --max:1080px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+:root{
+  --paper:#F7F5F0;
+  --ink:#181F2A;
+  --ink-soft:#4A5262;
+  --teal:#2F7A73;
+  --amber:#D98E3B;
+  --grid:#DAD5C8;
+  --card:#FFFFFF;
+  --dark:#111923;
+  --max:1080px;
+}
 
-  /* faint grid backdrop */
-  .grid-bg{
-    position:fixed;inset:0;z-index:-1;
-    background-image:
-      linear-gradient(var(--grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size:64px 64px;
-    opacity:.35;
-    mask-image:linear-gradient(to bottom, black, transparent 85%);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* GRID BACKGROUND */
+
+.grid-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+
+  background-size:64px 64px;
+  opacity:.3;
+
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+/* NAVIGATION */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  background:rgba(247,245,240,.88);
+  backdrop-filter:blur(10px);
+
+  border-bottom:1px solid var(--grid);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:17px 28px;
+
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+.brand{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:18px;
+}
+
+.brand .cell{
+  color:var(--teal);
+}
+
+.navlinks{
+  display:none;
+  gap:28px;
+}
+
+.navlinks a{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+}
+
+.navlinks a .ref{
+  color:var(--amber);
+  font-size:10px;
+}
+
+@media(min-width:720px){
+  .navlinks{
+    display:flex;
+  }
+}
+
+/* BUTTONS */
+
+.btn{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;
+
+  padding:13px 21px;
+
+  border-radius:4px;
+  border:1px solid var(--ink);
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  transition:.2s;
+}
+
+.btn-solid{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.btn-solid:hover{
+  background:var(--teal);
+  border-color:var(--teal);
+  transform:translateY(-2px);
+}
+
+.btn-line:hover{
+  background:var(--ink);
+  color:var(--paper);
+  transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+  padding:110px 0 100px;
+
+  display:grid;
+  gap:50px;
+
+  border-top:none !important;
+}
+
+.hero-copy{
+  max-width:650px;
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:var(--teal);
+
+  letter-spacing:.06em;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  margin-bottom:22px;
+
+  opacity:0;
+  animation:rise .7s .1s forwards;
+}
+
+.eyebrow::before{
+  content:"";
+
+  width:8px;
+  height:8px;
+
+  background:var(--amber);
+
+  border-radius:2px;
+}
+
+h1{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-weight:700;
+
+  font-size:clamp(40px,7vw,66px);
+
+  line-height:1.02;
+
+  letter-spacing:-.035em;
+
+  opacity:0;
+  animation:rise .7s .25s forwards;
+}
+
+h1 .accent{
+  color:var(--teal);
+}
+
+.hero-sub{
+  margin-top:24px;
+
+  font-size:17px;
+
+  color:var(--ink-soft);
+
+  max-width:54ch;
+
+  opacity:0;
+  animation:rise .7s .4s forwards;
+}
+
+.hero-cta{
+  margin-top:34px;
+
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+
+  opacity:0;
+  animation:rise .7s .55s forwards;
+}
+
+@keyframes rise{
+  from{
+    opacity:0;
+    transform:translateY(16px);
   }
 
-  /* nav */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(247,245,240,.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--grid);
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
-  nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 28px;max-width:var(--max);margin:0 auto;
-  }
-  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.02em;}
-  .brand .cell{color:var(--teal);}
-  .navlinks{display:flex;gap:28px;}
-  .navlinks a{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12.5px;color:var(--ink-soft);
-    display:flex;flex-direction:column;gap:1px;
-    transition:color .2s;
-  }
-  .navlinks a .ref{color:var(--amber);font-size:10px;}
-  .navlinks a:hover{color:var(--ink);}
-  .navlinks{display:none;}
-  @media(min-width:720px){.navlinks{display:flex;}}
+}
 
-  /* hero */
+/* PROFILE CARD */
+
+.profile-card{
+  position:relative;
+
+  background:var(--dark);
+
+  border-radius:10px;
+
+  min-height:430px;
+
+  overflow:hidden;
+
+  display:flex;
+  align-items:flex-end;
+
+  box-shadow:0 30px 60px -30px rgba(24,31,42,.45);
+
+  opacity:0;
+  animation:rise .8s .5s forwards;
+}
+
+.profile-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+
+  background-size:40px 40px;
+
+  opacity:.35;
+}
+
+.profile-image{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  z-index:2;
+}
+
+.profile-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 25%,
+      rgba(17,25,35,.2) 50%,
+      rgba(17,25,35,.92) 100%
+    );
+
+  z-index:3;
+}
+
+.profile-info{
+  position:relative;
+  z-index:4;
+
+  padding:28px;
+
+  color:white;
+  width:100%;
+}
+
+.profile-label{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  color:#B8C8C5;
+
+  letter-spacing:.08em;
+
+  margin-bottom:8px;
+}
+
+.profile-info h2{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:27px;
+
+  line-height:1.1;
+
+  margin-bottom:7px;
+}
+
+.profile-info p{
+  color:#D6DDDD;
+  font-size:13px;
+}
+
+.profile-status{
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  margin-top:15px;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  color:#D6DDDD;
+}
+
+.profile-status span{
+  width:7px;
+  height:7px;
+
+  background:#69A69F;
+
+  border-radius:50%;
+}
+
+/* SECTIONS */
+
+section{
+  padding:90px 0;
+
+  border-top:1px solid var(--grid);
+}
+
+.section-head{
+  margin-bottom:45px;
+}
+
+.tag{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:11px;
+
+  color:var(--amber);
+
+  letter-spacing:.07em;
+
+  margin-bottom:10px;
+
+  display:block;
+}
+
+h2{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:clamp(27px,4vw,38px);
+
+  font-weight:600;
+
+  letter-spacing:-.02em;
+}
+
+.reveal{
+  opacity:0;
+
+  transform:translateY(24px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.in{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  gap:45px;
+}
+
+.about-text p{
+  color:var(--ink-soft);
+
+  font-size:16px;
+
+  margin-bottom:17px;
+
+  max-width:58ch;
+}
+
+.about-intro{
+  margin-top:20px;
+}
+
+.strengths{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:14px;
+}
+
+.strength{
+  border:1px solid var(--grid);
+
+  border-radius:6px;
+
+  padding:19px;
+
+  background:var(--card);
+
+  transition:.2s;
+}
+
+.strength:hover{
+  transform:translateY(-3px);
+  border-color:var(--teal);
+}
+
+.strength .k{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  color:var(--teal);
+
+  display:block;
+
+  margin-bottom:8px;
+}
+
+.strength .v{
+  font-size:14px;
+  font-weight:500;
+}
+
+/* SKILLS */
+
+.skill-cols{
+  display:grid;
+  gap:42px;
+}
+
+.skill-col h3{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:12px;
+
+  color:var(--ink-soft);
+
+  margin-bottom:16px;
+
+  letter-spacing:.05em;
+}
+
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.pill{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:12px;
+
+  border:1px solid var(--grid);
+
+  background:var(--card);
+
+  padding:9px 14px;
+
+  border-radius:20px;
+
+  transition:.2s;
+}
+
+.pill:hover{
+  border-color:var(--teal);
+  transform:translateY(-2px);
+}
+
+/* PROJECTS */
+
+.project-list{
+  display:grid;
+  gap:30px;
+}
+
+.project-card{
+  background:var(--card);
+
+  border:1px solid var(--grid);
+
+  border-radius:9px;
+
+  overflow:hidden;
+
+  display:grid;
+}
+
+.project-media{
+  background:
+    linear-gradient(
+      135deg,
+      #1B2430,
+      #2F7A73 140%
+    );
+
+  min-height:280px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.project-media img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.project-number{
+  position:absolute;
+
+  top:16px;
+  left:16px;
+
+  z-index:3;
+
+  background:rgba(17,25,35,.8);
+
+  color:white;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  padding:6px 9px;
+
+  border-radius:3px;
+}
+
+.project-body{
+  padding:32px;
+}
+
+.project-cell{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  color:var(--amber);
+
+  margin-bottom:9px;
+
+  display:block;
+}
+
+.project-body h3{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:23px;
+
+  font-weight:600;
+
+  margin-bottom:13px;
+
+  line-height:1.15;
+}
+
+.project-body p{
+  color:var(--ink-soft);
+
+  font-size:14.5px;
+
+  margin-bottom:20px;
+}
+
+.taglist{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-bottom:24px;
+}
+
+.taglist span{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10.5px;
+
+  color:var(--ink-soft);
+
+  border:1px solid var(--grid);
+
+  padding:6px 9px;
+
+  border-radius:4px;
+}
+
+.project-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.more-note{
+  margin-top:30px;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:12px;
+
+  color:var(--ink-soft);
+
+  border:1px dashed var(--grid);
+
+  border-radius:6px;
+
+  padding:18px;
+
+  text-align:center;
+}
+
+/* CONTACT */
+
+.contact-inner{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:30px;
+}
+
+.contact-text{
+  max-width:520px;
+}
+
+.contact-text p{
+  color:var(--ink-soft);
+
+  margin-top:16px;
+
+  font-size:15px;
+}
+
+.contact-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--grid);
+
+  padding:30px 0;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:11px;
+
+  color:var(--ink-soft);
+}
+
+.footer-inner{
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+/* RESPONSIVE */
+
+@media(min-width:720px){
+
+  .skill-cols{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(min-width:860px){
+
   .hero{
-    padding:120px 0 100px;
-    display:grid;gap:40px;
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:130px 0 120px;
   }
-  @media(min-width:860px){
-    .hero{grid-template-columns:1.3fr 1fr;align-items:center;padding:150px 0 120px;}
+
+  .profile-card{
+    min-height:500px;
   }
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;
-                  
+
+  .about-grid{
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:start;
+  }
+
+  .project-card{
+    grid-template-columns:1.08fr .92fr;
+  }
+
+  .project-media{
+    min-height:390px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  nav{
+    padding:15px 20px;
+  }
+
+  nav > .btn{
+    padding:9px 13px;
+    font-size:11px;
+  }
+
+  .wrap{
+    padding:0 20px;
+  }
+
+  .hero{
+    padding:85px 0 80px;
+  }
+
+  .profile-card{
+    min-height:400px;
+  }
+
+  .strengths{
+    gap:10px;
+  }
+
+  .strength{
+    padding:15px;
+  }
+
+  .project-body{
+    padding:25px;
+  }
+
+  .contact-links{
+    width:100%;
+  }
+
+  .contact-links .btn{
+    flex:1;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    animation:none !important;
+    transition:none !important;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+
+<header>
+
+<nav>
+
+<div class="brand">
+<span class="cell">EO</span> / Oyedele
+</div>
+
+<div class="navlinks">
+
+<a href="#about">
+<span class="ref">A1</span>
+About
+</a>
+
+<a href="#skills">
+<span class="ref">B1</span>
+Skills
+</a>
+
+<a href="#projects">
+<span class="ref">C1</span>
+Projects
+</a>
+
+<a href="#contact">
+<span class="ref">D1</span>
+Contact
+</a>
+
+</div>
+
+<a href="#contact" class="btn btn-solid">
+Get in touch
+</a>
+
+</nav>
+
+</header>
+
+<main class="wrap">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+Lagos, Nigeria · Data Analytics
+</div>
+
+<h1>
+I turn
+<span class="accent">data</span>
+into
+<br>
+clear decisions.
+</h1>
+
+<p class="hero-sub">
+I'm Ezekiel Oyedele, an aspiring Data Analyst focused on
+Excel, SQL, and Power BI. I clean, analyze, and visualize
+data to uncover patterns, answer business questions, and
+communicate useful insights.
+</p>
+
+<div class="hero-cta">
+
+<a href="#projects" class="btn btn-solid">
+View projects →
+</a>
+
+<a href="#about" class="btn btn-line">
+About me
+</a>
+
+</div>
+
+</div>
+
+<!-- PROFILE CARD -->
+
+<div class="profile-card">
+
+<div class="profile-grid"></div>
+
+<img
+class="profile-image"
+src="profile.jpg"
+alt="Ezekiel Oyedele"
+>
+
+<div class="profile-overlay"></div>
+
+<div class="profile-info">
+
+<div class="profile-label">
+PROFILE / 001
+</div>
+
+<h2>
+Ezekiel Oyedele
+</h2>
+
+<p>
+Data Analyst · Excel · SQL · Power BI
+</p>
+
+<div class="profile-status">
+<span></span>
+Building analytical projects
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about-grid reveal">
+
+<div class="about-text">
+
+<span class="tag">
+A1 — ABOUT ME
+</span>
+
+<h2>
+Analytical thinking with a focus on useful outcomes.
+</h2>
+
+<p class="about-intro">
+I'm Ezekiel Oyedele, a Computer Science Education student
+building my career in Data Analytics.
+</p>
+
+<p>
+My current focus is developing practical skills in
+Microsoft Excel, SQL, and Power BI through real-world
+analytical projects.
+</p>
+
+<p>
+I enjoy working with data from the point where it is messy
+and unstructured to the point where it becomes a clear
+dashboard, useful KPI, or business insight.
+</p>
+
+</div>
+
+<div class="strengths">
+
+<div class="strength">
+<span class="k">01</span>
+<span class="v">Data Cleaning</span>
+</div>
+
+<div class="strength">
+<span class="k">02</span>
+<span class="v">SQL Analysis</span>
+</div>
+
+<div class="strength">
+<span class="k">03</span>
+<span class="v">Dashboard Design</span>
+</div>
+
+<div class="strength">
+<span class="k">04</span>
+<span class="v">Business Insights</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-head reveal">
+
+<span class="tag">
+B1 — SKILLS
+</span>
+
+<h2>
+Tools & techniques
+</h2>
+
+</div>
+
+<div class="skill-cols reveal">
+
+<div class="skill-col">
+
+<h3>
+CORE TOOLS
+</h3>
+
+<div class="pills">
+
+<span class="pill">
+Microsoft Excel
+</span>
+
+<span class="pill">
+SQL
+</span>
+
+<span class="pill">
+Power BI
+</span>
+
+</div>
+
+</div>
+
+<div class="skill-col">
+
+<h3>
+ANALYTICAL SKILLS
+</h3>
+
+<div class="pills">
+
+<span class="pill">
+Data Cleaning
+</span>
+
+<span class="pill">
+Exploratory Data Analysis
+</span>
+
+<span class="pill">
+Data Visualization
+</span>
+
+<span class="pill">
+KPI Development
+</span>
+
+<span class="pill">
+Dashboard Design
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-head reveal">
+
+<span class="tag">
+C1 — PROJECTS
+</span>
+
+<h2>
+Selected analytical work
+</h2>
+
+</div>
+
+<div class="project-list">
+
+<!-- RETAIL PROJECT -->
+
+<div class="project-card reveal">
+
+<div class="project-media">
+
+<span class="project-number">
+PROJECT 01
+</span>
+
+<img
+src="https://raw.githubusercontent.com/EzekielOyedele/ezekieloyedele.github.io/ccbdfa373a5ad15c0cd4011178f60dacf238d988/Retail%20Sales%20Dashboard%20Preview.png"
+alt="Retail Sales Analysis Dashboard"
+>
+
+</div>
+
+<div class="project-body">
+
+<span class="project-cell">
+C2 — FEATURED PROJECT
+</span>
+
+<h3>
+Retail Sales Analysis Dashboard
+</h3>
+
+<p>
+An end-to-end retail sales analysis project built with
+Microsoft Excel. The project focuses on cleaning sales
+data, analyzing performance, developing KPIs, and
+presenting findings through an interactive dashboard.
+</p>
+
+<div class="taglist">
+
+<span>Microsoft Excel</span>
+<span>Data Cleaning</span>
+<span>PivotTables</span>
+<span>PivotCharts</span>
+<span>KPI Analysis</span>
+<span>Dashboard Design</span>
+
+</div>
+
+<div class="project-actions">
+
+<a
+href="https://github.com/EzekielOyedele/Retail-Sales-Analysis"
+class="btn btn-solid"
+target="_blank"
+rel="noopener noreferrer"
+>
+View project →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- E-COMMERCE PROJECT -->
+
+<div class="project-card reveal">
+
+<div class="project-media">
+
+<span class="project-number">
+PROJECT 02
+</span>
+
+<div style="
+height:100%;
+min-height:280px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:rgba(255,255,255,.65);
+font-family:'IBM Plex Mono',monospace;
+font-size:12px;
+text-align:center;
+padding:30px;
+">
+
+E-commerce Sales Analysis
+<br>
+Coming soon
+
+</div>
+
+</div>
+
+<div class="project-body">
+
+<span class="project-cell">
+C3 — IN PROGRESS
+</span>
+
+<h3>
+E-commerce Sales Analysis & Dashboard
+</h3>
+
+<p>
+A practical e-commerce analysis project focused on
+understanding orders, revenue, customers, products,
+payment methods, and sales performance using SQL and
+dashboard-based analysis.
+</p>
+
+<div class="taglist">
+
+<span>SQL</span>
+<span>Data Analysis</span>
+<span>E-commerce</span>
+<span>KPIs</span>
+<span>Dashboard</span>
+
+</div>
+
+<div class="project-actions">
+
+<span class="btn btn-line">
+Project in progress
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="more-note reveal">
+
+More analytical projects will be added as they are completed.
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-inner reveal">
+
+<div class="contact-text">
+
+<span class="tag">
+D1 — CONTACT
+</span>
+
+<h2>
+Let's connect.
+</h2>
+
+<p>
+I'm open to learning opportunities, internships,
+collaborations, and entry-level Data Analytics
+opportunities.
+</p>
+
+</div>
+
+<div class="contact-links">
+
+<a
+href="https://github.com/EzekielOyedele"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-line"
+>
+GitHub ↗
+</a>
+
+<a
+href="https://www.linkedin.com/in/ezekiel-oyedele-1ba19538a"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-line"
+>
+LinkedIn ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="wrap footer-inner">
+
+<span>
+© 2026 Ezekiel Oyedele
+</span>
+
+<span>
+Excel · SQL · Power BI
+</span>
+
+</div>
+
+</footer>
+
+<script>
+
+const revealEls =
+document.querySelectorAll('.reveal');
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach((entry) => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('in');
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:0.15
+}
+
+);
+
+revealEls.forEach((element) => {
+
+observer.observe(element);
+
+});
+
+</script>
+
+</body>
+  </html>
