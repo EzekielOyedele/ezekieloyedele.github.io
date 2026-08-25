@@ -28,6 +28,9 @@ An end-to-end retail sales analysis project using Microsoft Excel to clean, anal
 - Regional and payment-method analysis
 - Business insight generation
 
+Retaila Sales Dashboard 
+Retail Sales Dashboard Preview.png
+
 🔗 **[View Project →](https://github.com/EzekielOyedele/Retail-Sales-Analysis)**
 
 ## Skills & Tools
